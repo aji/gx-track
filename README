@@ -1,0 +1,56 @@
+gx-track, an SDL/OpenGL program for tracking Sega Genesis tunes
+
+This code has no real license at the moment, so please contact me if
+you want to do distribute it in any form.
+
+PLEASE DON'T LOOK AT THIS, PLEASE.
+
+The sound emulation in gx-track is copied straight out of GENS. I'm
+leaving it out of the repo for now because it's GPLv2 licensed and
+I don't know all the details of how that works. If you want to try
+building gx-track, you will have to copy ym2612.c and ym2612.h from gens
+and placing them in the gens-sound directory. Eventually you will have
+to copy psg.h and psg.c too. There may also have been some changes to
+the source itself as well (I think just encoding changes, line ending
+changes, and maybe an #include here or there). I don't really know for
+sure. At this time, nobody should be trying to build gx-track anyway,
+though, so I am not concerned.
+
+Until this repo has a proper README, this is just a place for me to keep
+all my hard work.
+
+The controls at current are as follows:
+
+    F1             play pattern from beginning
+    F2             play pattern from cursor
+    F3             single step playback at cursor
+    F4             stop playback and all sounds (panic key)
+    Space          toggle edit
+    Shift+Up/Down  change instrument
+    Ctrl+Up/Down   change octave
+    Ctrl+1,2,...   select octave directly
+    Arrow keys     move cursor
+    Tab            move to next channel
+    Shift+Tab      move to previous channel
+    Page Up        move cursor up to 16 rows up
+    Page Down      move cursor up to 16 rows down
+    DEL/Backspace  in edit mode, delete a note
+    1              in edit mode, add note off
+
+In edit mode, the keys may be used as a keyboard, as with most
+trackers. The exact layout, if using QWERTY on a MacBook Pro looks
+something like this, if the current octave were 0:
+
+    |             |             |
+    |             |2 3   5 6 7  |9 0   =
+    |             q w e r t y u i o p [ ]
+    |             |             |
+    |s d   g h j  |l ;          |
+    z x c v b n m , . /         |
+    |             |             |
+    C0            C1            C2
+
+It's about as wide of a spread as is possible on a typical keyboard,
+which is essential for artist comfort. Special functions will be modal
+or accessed with modifier and function keys to avoid collisions with
+note entry.

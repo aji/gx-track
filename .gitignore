@@ -1,0 +1,5 @@
+*.o
+gx-track
+gens-sound/
+*.swp
+hidden/
